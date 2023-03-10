@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Signup</title>
+</head>
+<body>
+
+{% for message in messages %}
+<div class="alert={{ message.tags }} alert=dismissable fade show" role="alert">
+    <strong>Message</strong>{{ message }}
+    <button type="button" class="=close" data-dismiss="alert" aria-label="close">
+    <span aria-hidden="true">Stimes;</span>
+</button>
+</div>
+{% end for %}
+
+
+<h2>Please SignUp</h2>
+
+<form action="/signup" method="POST">
+
+    <label for="">Username</label>
+    <input type="text" id="Username" name="Username" placeholder="Create Username(only letters and numbers)" Required>
+    <br>
+
+    <label for="">First Name</label>
+    <input type="text" id="Fname" name="Fname" placeholder="Enter your First Name" Required>
+    <br>
+
+    <label for="">Last Name</label>
+    <input type="text" id="Lname" name="Lname" placeholder="Enter your Last Name" Required>
+    <br>
+
+    <label for="">Email Address</label>
+    <input type="email" id="Email" name="Email" placeholder="Enter your active email address" Required>
+    <br>
+
+    <label for="">Password</label>
+    <input type="password" id="pass1" name="Password1" placeholder="Create a password(upto 8 characters)" Required>
+    <br>
+
+    <label for="">Confirm Password</label>
+    <input type="password" id="pass2" name="Password2" placeholder="Create a password(upto 8 characters)" Required>
+    <br>
+
+    <button type="submit">Signup</button>
+</form>
+
+
+</body>
+</html>

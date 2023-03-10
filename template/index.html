@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login System</title>
+</head>
+<body>
+
+{% for message in messages %}
+<div class="alert={{ message.tags }} alert=dismissable fade show" role="alert">
+    <strong>Message</strong>{{ message }}
+    <button type="button" class="=close" data-dismiss="alert" aria-label="close">
+    <span aria-hidden="true">Stimes;</span>
+</button>
+</div>
+{% end for %}
+
+
+<h2>Welcome to Geeks</h2>
+
+{% if user.is_authenticated %}
+
+<h3>Hello there {{ fname }}</h3>
+
+<h4>You are logged in successfully</h4>
+
+<button type="submit"><a href="/signout">Signout</a></button>
+{% else %}
+<button type="submit "><a href="/signup">Signup</a></button>
+<button type="submit"><a href="/signin">Signin</a></button>
+{% endif %}
+</body>
+</html>
